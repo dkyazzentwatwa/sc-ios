@@ -1,0 +1,325 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1000001 /* StarCraftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001 /* StarCraftApp.swift */; };
+		A1000002 /* MetalGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000002 /* MetalGameView.swift */; };
+		A1000005 /* TouchInputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000005 /* TouchInputManager.swift */; };
+		A1000010 /* libopenbw_bridge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2000010 /* libopenbw_bridge.a */; };
+		A1000011 /* libopenbw_ios_platform.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2000011 /* libopenbw_ios_platform.a */; };
+		A1000012 /* libopenbw_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2000012 /* libopenbw_core.a */; };
+		A1000020 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2000020 /* Metal.framework */; };
+		A1000021 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2000021 /* MetalKit.framework */; };
+		A1000022 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2000022 /* UIKit.framework */; };
+		A1000023 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2000023 /* AVFoundation.framework */; };
+		A1000024 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2000024 /* AudioToolbox.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A2000001 /* StarCraftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarCraftApp.swift; sourceTree = "<group>"; };
+		A2000002 /* MetalGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalGameView.swift; sourceTree = "<group>"; };
+		A2000003 /* OpenBW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenBW.swift; sourceTree = "<group>"; };
+		A2000004 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		A2000005 /* TouchInputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchInputManager.swift; sourceTree = "<group>"; };
+		A2000010 /* libopenbw_bridge.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopenbw_bridge.a; path = "build-sim/Debug-iphonesimulator/libopenbw_bridge.a"; sourceTree = "<group>"; };
+		A2000011 /* libopenbw_ios_platform.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopenbw_ios_platform.a; path = "build-sim/Debug-iphonesimulator/libopenbw_ios_platform.a"; sourceTree = "<group>"; };
+		A2000012 /* libopenbw_core.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopenbw_core.a; path = "build-sim/Debug-iphonesimulator/libopenbw_core.a"; sourceTree = "<group>"; };
+		A2000020 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		A2000021 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		A2000022 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A2000023 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A2000024 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A2000030 /* OpenBWBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenBWBridge.h; sourceTree = "<group>"; };
+		A2000031 /* OpenBWGameRunner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenBWGameRunner.h; sourceTree = "<group>"; };
+		A2000040 /* StarCraft-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StarCraft-Bridging-Header.h"; sourceTree = "<group>"; };
+		A3000000 /* StarCraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarCraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A4000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000010 /* libopenbw_bridge.a in Frameworks */,
+				A1000011 /* libopenbw_ios_platform.a in Frameworks */,
+				A1000012 /* libopenbw_core.a in Frameworks */,
+				A1000020 /* Metal.framework in Frameworks */,
+				A1000021 /* MetalKit.framework in Frameworks */,
+				A1000022 /* UIKit.framework in Frameworks */,
+				A1000023 /* AVFoundation.framework in Frameworks */,
+				A1000024 /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A5000000 = {
+			isa = PBXGroup;
+			children = (
+				A5000001 /* StarCraftApp */,
+				A5000002 /* OpenBWBridge */,
+				A5000003 /* Frameworks */,
+				A5000004 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A5000001 /* StarCraftApp */ = {
+			isa = PBXGroup;
+			children = (
+				A2000001 /* StarCraftApp.swift */,
+				A2000002 /* MetalGameView.swift */,
+				A2000003 /* OpenBW.swift */,
+				A2000004 /* GameView.swift */,
+				A2000005 /* TouchInputManager.swift */,
+				A2000040 /* StarCraft-Bridging-Header.h */,
+			);
+			name = StarCraftApp;
+			path = "OpenBW-iOS/Sources/StarCraftApp";
+			sourceTree = "<group>";
+		};
+		A5000002 /* OpenBWBridge */ = {
+			isa = PBXGroup;
+			children = (
+				A2000030 /* OpenBWBridge.h */,
+				A2000031 /* OpenBWGameRunner.h */,
+			);
+			name = OpenBWBridge;
+			path = "OpenBW-iOS/Sources/OpenBWBridge";
+			sourceTree = "<group>";
+		};
+		A5000003 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2000010 /* libopenbw_bridge.a */,
+				A2000011 /* libopenbw_ios_platform.a */,
+				A2000012 /* libopenbw_core.a */,
+				A2000020 /* Metal.framework */,
+				A2000021 /* MetalKit.framework */,
+				A2000022 /* UIKit.framework */,
+				A2000023 /* AVFoundation.framework */,
+				A2000024 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A5000004 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A3000000 /* StarCraft.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A6000000 /* StarCraft */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7000002 /* Build configuration list for PBXNativeTarget "StarCraft" */;
+			buildPhases = (
+				A6000001 /* Sources */,
+				A4000000 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StarCraft;
+			productName = StarCraft;
+			productReference = A3000000 /* StarCraft.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A8000000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A6000000 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = A7000001 /* Build configuration list for PBXProject "StarCraft" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A5000000;
+			productRefGroup = A5000004 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A6000000 /* StarCraft */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A6000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000001 /* StarCraftApp.swift in Sources */,
+				A1000002 /* MetalGameView.swift in Sources */,
+				A1000005 /* TouchInputManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A9000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A9000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A9000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 64KA49G5TD;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/OpenBW-iOS/Sources/OpenBWBridge",
+					"$(PROJECT_DIR)/OpenBW-iOS/Sources/OpenBWCore",
+				);
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/build-sim/Debug-iphonesimulator";
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-lc++";
+				PRODUCT_BUNDLE_IDENTIFIER = com.openbw.starcraft;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "OpenBW-iOS/Sources/StarCraftApp/StarCraft-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A9000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 64KA49G5TD;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/OpenBW-iOS/Sources/OpenBWBridge",
+					"$(PROJECT_DIR)/OpenBW-iOS/Sources/OpenBWCore",
+				);
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/build-sim/Release-iphonesimulator";
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-lc++";
+				PRODUCT_BUNDLE_IDENTIFIER = com.openbw.starcraft;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "OpenBW-iOS/Sources/StarCraftApp/StarCraft-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A7000001 /* Build configuration list for PBXProject "StarCraft" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9000001 /* Debug */,
+				A9000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7000002 /* Build configuration list for PBXNativeTarget "StarCraft" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9000003 /* Debug */,
+				A9000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A8000000 /* Project object */;
+}

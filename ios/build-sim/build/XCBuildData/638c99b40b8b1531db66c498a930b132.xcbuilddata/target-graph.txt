@@ -1,0 +1,16 @@
+Target dependency graph (5 targets)
+Target 'ALL_BUILD' in project 'OpenBW-iOS'
+➜ Explicit dependency on target 'openbw_core' in project 'OpenBW-iOS'
+➜ Explicit dependency on target 'openbw_ios_platform' in project 'OpenBW-iOS'
+➜ Explicit dependency on target 'openbw_bridge' in project 'OpenBW-iOS'
+➜ Explicit dependency on target 'ZERO_CHECK' in project 'OpenBW-iOS'
+Target 'openbw_bridge' in project 'OpenBW-iOS'
+➜ Explicit dependency on target 'openbw_core' in project 'OpenBW-iOS'
+➜ Explicit dependency on target 'openbw_ios_platform' in project 'OpenBW-iOS'
+➜ Explicit dependency on target 'ZERO_CHECK' in project 'OpenBW-iOS'
+Target 'openbw_ios_platform' in project 'OpenBW-iOS'
+➜ Explicit dependency on target 'openbw_core' in project 'OpenBW-iOS'
+➜ Explicit dependency on target 'ZERO_CHECK' in project 'OpenBW-iOS'
+Target 'openbw_core' in project 'OpenBW-iOS'
+➜ Explicit dependency on target 'ZERO_CHECK' in project 'OpenBW-iOS'
+Target 'ZERO_CHECK' in project 'OpenBW-iOS' (no dependencies)
