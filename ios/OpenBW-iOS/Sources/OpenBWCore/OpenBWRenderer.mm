@@ -1,4 +1,4 @@
-// OpenBWRenderer.mm
+    // OpenBWRenderer.mm
 // Renders OpenBW game state to a framebuffer
 
 #import "OpenBWRenderer.h"

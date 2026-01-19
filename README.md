@@ -16,7 +16,48 @@ A native iOS port of StarCraft: Brood War using [OpenBW](https://github.com/Open
 
 ## 📱 Screenshots
 
-*Coming soon - contributions of gameplay screenshots welcome!*
+<table>
+  <tr>
+    <td align="center">
+      <img src="screenshots/01-setup-screen.png" width="300" alt="Setup Screen"/>
+      <br/>
+      <sub><b>Initial Setup</b></sub>
+      <br/>
+      <sub>Configure StarCraft data files path</sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/02-gameplay-interface.png" width="300" alt="Gameplay Interface"/>
+      <br/>
+      <sub><b>Zerg Gameplay</b></sub>
+      <br/>
+      <sub>Command interface with touch controls</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="screenshots/03-terran-base.png" width="300" alt="Terran Base"/>
+      <br/>
+      <sub><b>Terran Base</b></sub>
+      <br/>
+      <sub>Full RTS experience on iOS</sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/04-unit-selection.png" width="300" alt="Unit Selection"/>
+      <br/>
+      <sub><b>Unit Selection</b></sub>
+      <br/>
+      <sub>Multi-unit control with minimap</sub>
+    </td>
+  </tr>
+</table>
+
+### Interface Features Shown
+- **Resource Display**: Minerals, gas, and supply count in top-left
+- **Control Groups**: Numbers 1-10 for quick unit/building access
+- **Command Grid**: 3x3 button layout for unit commands (Move, Attack, Hold, Patrol, Stop, Build, Train, etc.)
+- **Minimap**: Real-time tactical overview in bottom-left
+- **Unit Selection**: Multi-select with detailed unit information
+- **Pause Control**: Game speed management in top-right
 
 ## 🏗️ Architecture
 
