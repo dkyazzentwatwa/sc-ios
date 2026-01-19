@@ -1,1 +1,32 @@
 shortcuts_-_CLI_Quickstart-oauth-credentials.txt
+
+# StarCraft game assets (copyrighted - users must provide their own)
+*.mpq
+*.MPQ
+ios/Assets/*.mpq
+ios/Assets/*.MPQ
+ios/Assets/maps/
+
+# Build artifacts
+ios/build-sim/
+ios/build-device/
+ios/DerivedData/
+*.xcworkspace/
+*.xcuserdata/
+
+# macOS
+.DS_Store
+*.swp
+*.swo
+
+# Xcode
+xcuserdata/
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/*.xcscheme
+
+# Credentials and secrets
+*.txt
+!README.txt
+*.credentials
+.env
