@@ -40,9 +40,28 @@ struct MetalGameView: UIViewRepresentable {
         var parent: MetalGameView
         weak var mtkView: MTKView?
         var touchInputManager: TouchInputManager?
+        var lastViewportSize: CGSize = .zero
 
         init(_ parent: MetalGameView) {
             self.parent = parent
+        }
+
+        /// Updates the game viewport size in points (logical coordinates).
+        ///
+        /// All coordinates in the game system use points, not pixels, for resolution independence.
+        /// This means the same coordinate values work across devices with different pixel densities.
+        ///
+        /// - Parameter size: The viewport size in points from view.bounds.size
+        private func updateViewportIfNeeded(size: CGSize) {
+            guard size.width > 0 && size.height > 0 else { return }
+            guard let runner = parent.gameController.gameRunner else { return }
+
+            // Only update if size actually changed
+            if lastViewportSize != size {
+                // Set viewport in points (logical coordinates)
+                runner.setViewportWidth(Float(size.width), height: Float(size.height))
+                lastViewportSize = size
+            }
         }
 
         func setupTouchInput(on view: UIView) {
@@ -65,11 +84,17 @@ struct MetalGameView: UIViewRepresentable {
         }
 
         func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
-            // Handle resize
+            // Update viewport dimensions when view size changes
+            // Use bounds size (points) instead of drawable size (pixels) for proper scaling
+            updateViewportIfNeeded(size: view.bounds.size)
         }
 
         func draw(in view: MTKView) {
             guard let gameRunner = parent.gameController.gameRunner else { return }
+
+            // Ensure viewport is set (handles initial setup and rotation)
+            // Use bounds size (points) instead of drawable size (pixels)
+            updateViewportIfNeeded(size: view.bounds.size)
 
             // Advance game state
             gameRunner.tick()
@@ -134,6 +159,15 @@ class GameController: ObservableObject {
     @Published var contextMenuLocation: CGPoint = .zero
     @Published var selectedUnits: [UnitInfoModel] = []
     @Published var commandMode: CommandMode = .none
+    @Published var showingBuildMenu = false
+    @Published var showingTrainMenu = false
+    @Published var showingAbilityMenu = false
+    @Published var buildPlacementMode = false
+    @Published var pendingBuildingType: Int = 0
+    @Published var pendingAbilityId: Int = 0
+    @Published var abilityTargetMode: Int = 0  // 0=none, 1=ground, 2=unit
+    @Published var controlGroupSizes: [Int] = Array(repeating: 0, count: 10)
+    @Published var rallyPointMode = false
 
     var gameRunner: OpenBWGameRunner?
     private let engine = OpenBWEngine.shared
@@ -222,7 +256,15 @@ class GameController: ObservableObject {
         guard let runner = gameRunner else { return }
         var x: Float = 0, y: Float = 0
         runner.getCameraX(&x, y: &y)
-        runner.setCameraX(x + Float(dx), y: y + Float(dy))
+
+        // Scale pan delta by inverse zoom for natural panning feel
+        // When zoomed in, camera moves less per screen pixel
+        // When zoomed out, camera moves more per screen pixel
+        let zoom = runner.zoom()
+        let scaledDx = Float(dx) / zoom
+        let scaledDy = Float(dy) / zoom
+
+        runner.setCameraX(x + scaledDx, y: y + scaledDy)
     }
 
     func setZoom(_ zoom: CGFloat) {
@@ -232,14 +274,62 @@ class GameController: ObservableObject {
     // MARK: - Touch Input
 
     func handleTap(at point: CGPoint, in viewSize: CGSize) {
-        // TODO: Implement unit selection once Swift bridging is fixed
-        // For now, touch handling is stubbed
-        print("Tap at \(point)")
+        guard let runner = gameRunner else { return }
+
+        // If in build placement mode, place the building
+        if buildPlacementMode {
+            placeBuildingAt(point)
+            return
+        }
+
+        // If in ability targeting mode, use the ability
+        if abilityTargetMode == 1 {
+            // Ground targeting
+            useAbilityOnGround(at: point)
+            return
+        } else if abilityTargetMode == 2 {
+            // Unit targeting - select unit first, then if it's an enemy, cast on it
+            // For now, try to cast on unit at location
+            // TODO: Get unit ID at location for proper unit targeting
+            runner.selectUnitAt(x: point.x, y: point.y)
+            // For now, use ground position (imperfect but functional)
+            gameRunner?.useAbility(onGround: Int32(pendingAbilityId), atX: point.x, y: point.y)
+            pendingAbilityId = 0
+            abilityTargetMode = 0
+            return
+        }
+
+        // If in rally point mode, set rally point
+        if rallyPointMode {
+            setRallyPoint(at: point)
+            return
+        }
+
+        // If there's a pending command mode, execute it instead of selecting
+        if commandMode != .none {
+            handlePendingCommand(at: point)
+            return
+        }
+
+        // Select unit at tap location
+        runner.selectUnitAt(x: point.x, y: point.y)
+        updateSelectedUnits()
     }
 
     func handleDrag(from start: CGPoint, to end: CGPoint, in viewSize: CGSize) {
-        // TODO: Implement box selection once Swift bridging is fixed
-        print("Drag from \(start) to \(end)")
+        guard let runner = gameRunner else { return }
+
+        // Create selection rectangle
+        let rect = CGRect(
+            x: min(start.x, end.x),
+            y: min(start.y, end.y),
+            width: abs(end.x - start.x),
+            height: abs(end.y - start.y)
+        )
+
+        // Box select units in rectangle
+        runner.selectUnits(in: rect)
+        updateSelectedUnits()
     }
 
     func showContextMenu(at location: CGPoint) {
@@ -279,6 +369,129 @@ class GameController: ObservableObject {
         guard let runner = gameRunner else { return }
         runner.patrolTo(x: point.x, y: point.y)
         commandMode = .none
+    }
+
+    // MARK: - Building Commands
+
+    func startBuildPlacement(buildingType: Int) {
+        pendingBuildingType = buildingType
+        buildPlacementMode = true
+        showingBuildMenu = false
+    }
+
+    func placeBuildingAt(_ point: CGPoint) {
+        guard let runner = gameRunner, buildPlacementMode else { return }
+        runner.buildStructure(Int32(pendingBuildingType), atX: point.x, y: point.y)
+        buildPlacementMode = false
+        pendingBuildingType = 0
+    }
+
+    func cancelBuildPlacement() {
+        buildPlacementMode = false
+        pendingBuildingType = 0
+    }
+
+    func trainUnit(_ unitType: Int) {
+        guard let runner = gameRunner else { return }
+        runner.trainUnit(Int32(unitType))
+        showingTrainMenu = false
+    }
+
+    // MARK: - Ability Commands
+
+    func getAvailableAbilities() -> [[String: Any]] {
+        guard let runner = gameRunner else { return [] }
+        return runner.getAvailableAbilities() as? [[String: Any]] ?? []
+    }
+
+    func useAbility(_ abilityId: Int, targetType: Int) {
+        if targetType == 0 {
+            // No-target ability - use immediately
+            gameRunner?.useAbility(Int32(abilityId))
+            showingAbilityMenu = false
+        } else {
+            // Targeting ability - enter targeting mode
+            pendingAbilityId = abilityId
+            abilityTargetMode = targetType
+            showingAbilityMenu = false
+        }
+    }
+
+    func useAbilityOnGround(at point: CGPoint) {
+        guard pendingAbilityId != 0 && abilityTargetMode == 1 else { return }
+        gameRunner?.useAbility(onGround: Int32(pendingAbilityId), atX: point.x, y: point.y)
+        pendingAbilityId = 0
+        abilityTargetMode = 0
+    }
+
+    func useAbilityOnUnit(targetId: Int) {
+        guard pendingAbilityId != 0 && abilityTargetMode == 2 else { return }
+        gameRunner?.useAbility(onUnit: Int32(pendingAbilityId), targetUnitId: Int32(targetId))
+        pendingAbilityId = 0
+        abilityTargetMode = 0
+    }
+
+    func cancelAbilityTargeting() {
+        pendingAbilityId = 0
+        abilityTargetMode = 0
+    }
+
+    func hasAbilities() -> Bool {
+        return !getAvailableAbilities().isEmpty
+    }
+
+    // MARK: - Control Groups
+
+    func assignControlGroup(_ group: Int) {
+        guard let runner = gameRunner else { return }
+        runner.assignControlGroup(Int32(group))
+        updateControlGroupSizes()
+    }
+
+    func addToControlGroup(_ group: Int) {
+        guard let runner = gameRunner else { return }
+        runner.add(toControlGroup: Int32(group))
+        updateControlGroupSizes()
+    }
+
+    func selectControlGroup(_ group: Int) {
+        guard let runner = gameRunner else { return }
+        runner.selectControlGroup(Int32(group))
+        updateSelectedUnits()
+        updateControlGroupSizes()
+    }
+
+    func updateControlGroupSizes() {
+        guard let runner = gameRunner else { return }
+        for i in 0..<10 {
+            controlGroupSizes[i] = Int(runner.getControlGroupSize(Int32(i)))
+        }
+    }
+
+    // MARK: - Rally Points
+
+    func setRallyPoint(at point: CGPoint) {
+        guard let runner = gameRunner else { return }
+        runner.setRallyPointAtX(point.x, y: point.y)
+        rallyPointMode = false
+    }
+
+    func enterRallyPointMode() {
+        rallyPointMode = true
+    }
+
+    func cancelRallyPointMode() {
+        rallyPointMode = false
+    }
+
+    // MARK: - Menu State
+
+    func hasSelectedWorker() -> Bool {
+        return selectedUnits.contains { $0.isWorker }
+    }
+
+    func hasSelectedProductionBuilding() -> Bool {
+        return selectedUnits.contains { $0.isBuilding }
     }
 
     func centerCamera(on point: CGPoint) {
@@ -380,6 +593,10 @@ struct GameScreen: View {
                     }
                     .padding()
 
+                    // Control group bar
+                    ControlGroupBar(gameController: gameController)
+                        .padding(.horizontal)
+
                     Spacer()
 
                     // Bottom controls
@@ -399,6 +616,78 @@ struct GameScreen: View {
                             .frame(width: 200)
                     }
                     .padding()
+
+                    // Build menu overlay
+                    if gameController.showingBuildMenu {
+                        BuildMenuView(gameController: gameController)
+                            .transition(.scale.combined(with: .opacity))
+                    }
+
+                    // Train menu overlay
+                    if gameController.showingTrainMenu {
+                        TrainMenuView(gameController: gameController)
+                            .transition(.scale.combined(with: .opacity))
+                    }
+
+                    // Ability menu overlay
+                    if gameController.showingAbilityMenu {
+                        AbilityMenuView(gameController: gameController)
+                            .transition(.scale.combined(with: .opacity))
+                    }
+
+                    // Ability targeting mode indicator
+                    if gameController.abilityTargetMode > 0 {
+                        VStack {
+                            Text(gameController.abilityTargetMode == 1 ? "Click ground to cast" : "Click target unit")
+                                .font(.headline)
+                                .foregroundColor(.cyan)
+                                .padding()
+                                .background(Color.black.opacity(0.7))
+                                .cornerRadius(8)
+                            Button("Cancel") {
+                                gameController.cancelAbilityTargeting()
+                            }
+                            .buttonStyle(.bordered)
+                            .tint(.red)
+                        }
+                        .position(x: UIScreen.main.bounds.width / 2, y: 100)
+                    }
+
+                    // Build placement mode indicator
+                    if gameController.buildPlacementMode {
+                        VStack {
+                            Text("Tap to place building")
+                                .font(.headline)
+                                .foregroundColor(.yellow)
+                                .padding()
+                                .background(Color.black.opacity(0.7))
+                                .cornerRadius(8)
+                            Button("Cancel") {
+                                gameController.cancelBuildPlacement()
+                            }
+                            .buttonStyle(.bordered)
+                            .tint(.red)
+                        }
+                        .position(x: UIScreen.main.bounds.width / 2, y: 100)
+                    }
+
+                    // Rally point mode indicator
+                    if gameController.rallyPointMode {
+                        VStack {
+                            Text("Tap to set rally point")
+                                .font(.headline)
+                                .foregroundColor(.orange)
+                                .padding()
+                                .background(Color.black.opacity(0.7))
+                                .cornerRadius(8)
+                            Button("Cancel") {
+                                gameController.cancelRallyPointMode()
+                            }
+                            .buttonStyle(.bordered)
+                            .tint(.red)
+                        }
+                        .position(x: UIScreen.main.bounds.width / 2, y: 100)
+                    }
                 }
             } else {
                 // Asset path input
@@ -767,12 +1056,22 @@ struct CommandPalette: View {
             }
         case 4: // Stop - immediate command
             gameController.stopSelectedUnits()
-        case 5: // Build - TODO: show build menu
-            print("Build menu - not yet implemented")
-        case 6: // Train - TODO: show train menu based on selected building
-            print("Train menu - not yet implemented")
-        case 7: // Ability - TODO: show ability menu
-            print("Ability menu - not yet implemented")
+        case 5: // Build - show build menu if worker selected
+            if gameController.hasSelectedWorker() {
+                gameController.showingBuildMenu.toggle()
+                gameController.showingTrainMenu = false
+            }
+        case 6: // Train - show train menu if building selected
+            if gameController.hasSelectedProductionBuilding() {
+                gameController.showingTrainMenu.toggle()
+                gameController.showingBuildMenu = false
+            }
+        case 7: // Ability - show ability menu if unit has abilities
+            if gameController.hasAbilities() {
+                gameController.showingAbilityMenu.toggle()
+                gameController.showingBuildMenu = false
+                gameController.showingTrainMenu = false
+            }
         case 8: // Options - TODO: show options
             print("Options menu - not yet implemented")
         default:
@@ -1065,6 +1364,433 @@ struct StatBar: View {
             .frame(height: 6)
             .cornerRadius(3)
         }
+    }
+}
+
+// MARK: - Build Menu
+
+struct BuildMenuView: View {
+    @ObservedObject var gameController: GameController
+
+    // Terran buildings with their type IDs
+    private let terranBuildings: [(name: String, typeId: Int, minerals: Int, gas: Int)] = [
+        ("Supply Depot", 120, 100, 0),
+        ("Barracks", 122, 150, 0),
+        ("Refinery", 121, 100, 0),
+        ("Engineering Bay", 133, 125, 0),
+        ("Bunker", 136, 100, 0),
+        ("Missile Turret", 135, 75, 0),
+        ("Academy", 123, 150, 0),
+        ("Factory", 124, 200, 100),
+        ("Armory", 134, 100, 50)
+    ]
+
+    var body: some View {
+        VStack(spacing: 8) {
+            HStack {
+                Text("Build")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                Spacer()
+                Button(action: { gameController.showingBuildMenu = false }) {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundColor(.gray)
+                }
+            }
+
+            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 8) {
+                ForEach(terranBuildings, id: \.typeId) { building in
+                    BuildingButton(
+                        name: building.name,
+                        minerals: building.minerals,
+                        gas: building.gas,
+                        canAfford: gameController.minerals >= building.minerals && gameController.gas >= building.gas
+                    ) {
+                        gameController.startBuildPlacement(buildingType: building.typeId)
+                    }
+                }
+            }
+
+            if gameController.buildPlacementMode {
+                Text("Tap to place building")
+                    .font(.caption)
+                    .foregroundColor(.yellow)
+            }
+        }
+        .padding()
+        .background(Color.black.opacity(0.8))
+        .cornerRadius(12)
+        .frame(width: 280)
+    }
+}
+
+struct BuildingButton: View {
+    let name: String
+    let minerals: Int
+    let gas: Int
+    let canAfford: Bool
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            VStack(spacing: 2) {
+                Image(systemName: "building.2.fill")
+                    .font(.title3)
+                Text(name)
+                    .font(.caption2)
+                    .lineLimit(1)
+                HStack(spacing: 4) {
+                    Image(systemName: "diamond.fill")
+                        .font(.system(size: 8))
+                        .foregroundColor(.cyan)
+                    Text("\(minerals)")
+                        .font(.caption2)
+                    if gas > 0 {
+                        Image(systemName: "flame.fill")
+                            .font(.system(size: 8))
+                            .foregroundColor(.green)
+                        Text("\(gas)")
+                            .font(.caption2)
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .padding(6)
+            .background(canAfford ? Color.blue.opacity(0.3) : Color.gray.opacity(0.2))
+            .cornerRadius(6)
+            .foregroundColor(canAfford ? .white : .gray)
+        }
+        .disabled(!canAfford)
+    }
+}
+
+// MARK: - Train Menu
+
+struct TrainMenuView: View {
+    @ObservedObject var gameController: GameController
+
+    // Get trainable units based on selected building type
+    private var trainableUnits: [(name: String, typeId: Int, minerals: Int, gas: Int)] {
+        // Check first selected building type
+        guard let building = gameController.selectedUnits.first(where: { $0.isBuilding }) else {
+            return []
+        }
+
+        // Return units based on building type
+        switch building.typeId {
+        case 122: // Barracks
+            return [
+                ("Marine", 0, 50, 0),
+                ("Firebat", 32, 50, 25),
+                ("Medic", 34, 50, 25)
+            ]
+        case 117: // Command Center
+            return [
+                ("SCV", 7, 50, 0)
+            ]
+        case 124: // Factory
+            return [
+                ("Vulture", 2, 75, 0),
+                ("Tank", 5, 150, 100),
+                ("Goliath", 3, 100, 50)
+            ]
+        case 125: // Starport
+            return [
+                ("Wraith", 8, 150, 100),
+                ("Dropship", 11, 100, 100),
+                ("Science Vessel", 9, 100, 225),
+                ("Battlecruiser", 12, 400, 300)
+            ]
+        default:
+            return []
+        }
+    }
+
+    var body: some View {
+        VStack(spacing: 8) {
+            HStack {
+                Text("Train")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                Spacer()
+                Button(action: { gameController.showingTrainMenu = false }) {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundColor(.gray)
+                }
+            }
+
+            if trainableUnits.isEmpty {
+                Text("No units available")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+            } else {
+                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 8) {
+                    ForEach(trainableUnits, id: \.typeId) { unit in
+                        TrainButton(
+                            name: unit.name,
+                            minerals: unit.minerals,
+                            gas: unit.gas,
+                            canAfford: gameController.minerals >= unit.minerals && gameController.gas >= unit.gas
+                        ) {
+                            gameController.trainUnit(unit.typeId)
+                        }
+                    }
+                }
+            }
+        }
+        .padding()
+        .background(Color.black.opacity(0.8))
+        .cornerRadius(12)
+        .frame(width: 220)
+    }
+}
+
+struct TrainButton: View {
+    let name: String
+    let minerals: Int
+    let gas: Int
+    let canAfford: Bool
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            VStack(spacing: 2) {
+                Image(systemName: "person.fill")
+                    .font(.title3)
+                Text(name)
+                    .font(.caption2)
+                HStack(spacing: 4) {
+                    Image(systemName: "diamond.fill")
+                        .font(.system(size: 8))
+                        .foregroundColor(.cyan)
+                    Text("\(minerals)")
+                        .font(.caption2)
+                    if gas > 0 {
+                        Image(systemName: "flame.fill")
+                            .font(.system(size: 8))
+                            .foregroundColor(.green)
+                        Text("\(gas)")
+                            .font(.caption2)
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .padding(8)
+            .background(canAfford ? Color.green.opacity(0.3) : Color.gray.opacity(0.2))
+            .cornerRadius(6)
+            .foregroundColor(canAfford ? .white : .gray)
+        }
+        .disabled(!canAfford)
+    }
+}
+
+// MARK: - Ability Menu
+
+struct AbilityMenuView: View {
+    @ObservedObject var gameController: GameController
+
+    var body: some View {
+        VStack(spacing: 8) {
+            HStack {
+                Text("Abilities")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                Spacer()
+                Button(action: { gameController.showingAbilityMenu = false }) {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundColor(.gray)
+                }
+            }
+
+            let abilities = gameController.getAvailableAbilities()
+
+            if abilities.isEmpty {
+                Text("No abilities available")
+                    .foregroundColor(.gray)
+                    .padding()
+            } else {
+                LazyVGrid(columns: [
+                    GridItem(.flexible()),
+                    GridItem(.flexible())
+                ], spacing: 6) {
+                    ForEach(abilities.indices, id: \.self) { index in
+                        let ability = abilities[index]
+                        AbilityButton(
+                            name: ability["name"] as? String ?? "Unknown",
+                            energyCost: ability["energyCost"] as? Int ?? 0,
+                            targetType: ability["targetType"] as? Int ?? 0,
+                            hasEnergy: true, // TODO: check unit energy
+                            action: {
+                                let abilityId = ability["id"] as? Int ?? 0
+                                let targetType = ability["targetType"] as? Int ?? 0
+                                gameController.useAbility(abilityId, targetType: targetType)
+                            }
+                        )
+                    }
+                }
+            }
+        }
+        .padding()
+        .background(Color.black.opacity(0.9))
+        .cornerRadius(12)
+        .frame(width: 220)
+    }
+}
+
+struct AbilityButton: View {
+    let name: String
+    let energyCost: Int
+    let targetType: Int
+    let hasEnergy: Bool
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            VStack(spacing: 2) {
+                Image(systemName: iconForAbility(name))
+                    .font(.title3)
+                Text(name)
+                    .font(.caption2)
+                    .lineLimit(1)
+                if energyCost > 0 {
+                    HStack(spacing: 2) {
+                        Image(systemName: "bolt.fill")
+                            .font(.system(size: 8))
+                            .foregroundColor(.purple)
+                        Text("\(energyCost)")
+                            .font(.caption2)
+                    }
+                }
+                // Indicator for targeting type
+                if targetType > 0 {
+                    Text(targetType == 1 ? "Ground" : "Unit")
+                        .font(.system(size: 7))
+                        .foregroundColor(.orange)
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .padding(6)
+            .background(hasEnergy ? Color.purple.opacity(0.3) : Color.gray.opacity(0.2))
+            .cornerRadius(6)
+            .foregroundColor(hasEnergy ? .white : .gray)
+        }
+        .disabled(!hasEnergy)
+    }
+
+    func iconForAbility(_ name: String) -> String {
+        switch name.lowercased() {
+        case "stim pack": return "bolt.heart.fill"
+        case "siege mode", "tank mode": return "shield.fill"
+        case "burrow": return "arrow.down.to.line"
+        case "cloak": return "eye.slash.fill"
+        case "yamato cannon": return "scope"
+        case "lockdown": return "lock.fill"
+        case "psionic storm": return "cloud.bolt.fill"
+        case "defensive matrix": return "shield.checkered"
+        case "emp shockwave": return "bolt.circle.fill"
+        case "irradiate": return "rays"
+        case "restoration": return "cross.fill"
+        case "optical flare": return "sun.max.fill"
+        case "dark swarm": return "cloud.fill"
+        case "plague": return "allergens"
+        case "consume": return "mouth.fill"
+        case "parasite": return "ant.fill"
+        case "spawn broodlings": return "ladybug.fill"
+        case "ensnare": return "web.camera"
+        case "infestation": return "microbe.fill"
+        case "hallucination": return "person.2.fill"
+        case "feedback": return "arrow.uturn.backward"
+        case "mind control": return "brain.head.profile"
+        case "maelstrom": return "tornado"
+        case "disruption web": return "network"
+        case "recall": return "arrow.up.and.down.and.arrow.left.and.right"
+        case "stasis field": return "pause.circle.fill"
+        default: return "sparkles"
+        }
+    }
+}
+
+// MARK: - Control Group Bar
+
+struct ControlGroupBar: View {
+    @ObservedObject var gameController: GameController
+
+    var body: some View {
+        HStack(spacing: 4) {
+            ForEach(0..<10, id: \.self) { index in
+                ControlGroupButton(
+                    group: index,
+                    unitCount: gameController.controlGroupSizes[index],
+                    onTap: {
+                        gameController.selectControlGroup(index)
+                    },
+                    onLongPress: {
+                        gameController.assignControlGroup(index)
+                    }
+                )
+            }
+
+            // Rally point button (shown when production building selected)
+            if gameController.hasSelectedProductionBuilding() {
+                Divider()
+                    .frame(height: 30)
+                    .background(Color.gray)
+
+                Button(action: {
+                    gameController.enterRallyPointMode()
+                }) {
+                    VStack(spacing: 2) {
+                        Image(systemName: "flag.fill")
+                            .font(.system(size: 14))
+                        Text("Rally")
+                            .font(.system(size: 8))
+                    }
+                    .foregroundColor(.orange)
+                    .frame(width: 36, height: 36)
+                    .background(gameController.rallyPointMode ? Color.orange.opacity(0.3) : Color.black.opacity(0.6))
+                    .cornerRadius(6)
+                }
+            }
+        }
+        .padding(6)
+        .background(Color.black.opacity(0.7))
+        .cornerRadius(8)
+    }
+}
+
+struct ControlGroupButton: View {
+    let group: Int
+    let unitCount: Int
+    let onTap: () -> Void
+    let onLongPress: () -> Void
+
+    @State private var isPressed = false
+
+    var body: some View {
+        Button(action: onTap) {
+            VStack(spacing: 1) {
+                Text("\(group + 1)")
+                    .font(.system(size: 12, weight: .bold))
+                if unitCount > 0 {
+                    Text("\(unitCount)")
+                        .font(.system(size: 8))
+                        .foregroundColor(.cyan)
+                }
+            }
+            .foregroundColor(unitCount > 0 ? .white : .gray)
+            .frame(width: 28, height: 36)
+            .background(unitCount > 0 ? Color.blue.opacity(0.4) : Color.black.opacity(0.4))
+            .cornerRadius(4)
+        }
+        .simultaneousGesture(
+            LongPressGesture(minimumDuration: 0.5)
+                .onEnded { _ in
+                    onLongPress()
+                    // Haptic feedback
+                    let generator = UIImpactFeedbackGenerator(style: .medium)
+                    generator.impactOccurred()
+                }
+        )
     }
 }
 

@@ -30,6 +30,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// Initialize renderer with framebuffer dimensions
 - (instancetype)initWithWidth:(int)width height:(int)height;
 
+/// Resize the framebuffer
+- (void)resizeWithWidth:(int)width height:(int)height;
+
 /// Load tileset and image data from game data path
 /// Must be called after OpenBW is initialized
 - (BOOL)loadImageDataFromPath:(NSString*)path error:(NSError**)error;
@@ -101,10 +104,12 @@ typedef struct {
 /// @param cameraY Camera Y position in world coordinates
 /// @param mapWidth Map width in pixels
 /// @param mapHeight Map height in pixels
+/// @param zoomLevel Zoom level (1.0 = normal, >1.0 = zoomed in, <1.0 = zoomed out)
 - (void)renderWithCameraX:(float)cameraX
                   cameraY:(float)cameraY
                  mapWidth:(int)mapWidth
-                mapHeight:(int)mapHeight;
+                mapHeight:(int)mapHeight
+                zoomLevel:(float)zoomLevel;
 
 /// Set units to render (legacy placeholder rendering)
 /// @param units Array of RenderUnitInfo

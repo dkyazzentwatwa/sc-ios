@@ -1,0 +1,5 @@
+/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeFiles/openbw_core.dir
+/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeFiles/openbw_ios_platform.dir
+/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeFiles/openbw_bridge.dir
+/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeFiles/ALL_BUILD.dir
+/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeFiles/ZERO_CHECK.dir

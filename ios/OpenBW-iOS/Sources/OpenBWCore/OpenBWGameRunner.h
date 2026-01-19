@@ -94,6 +94,11 @@ typedef void (^GameEventCallback)(NSString* eventType, NSDictionary* eventData);
 - (void)setZoom:(float)zoom;
 - (float)zoom;
 
+/// Viewport dimensions (call when view size changes)
+- (void)setViewportWidth:(float)width height:(float)height;
+- (float)viewportWidth;
+- (float)viewportHeight;
+
 /// Screen to world coordinate conversion
 - (void)screenToWorld:(CGPoint)screen worldX:(float*)x worldY:(float*)y;
 - (CGPoint)worldToScreen:(float)worldX worldY:(float)worldY;
@@ -117,6 +122,40 @@ typedef void (^GameEventCallback)(NSString* eventType, NSDictionary* eventData);
 /// Game commands - Building/Training
 - (void)buildStructure:(int)structureTypeId atX:(CGFloat)x y:(CGFloat)y;
 - (void)trainUnit:(int)unitTypeId;
+
+/// Game commands - Abilities
+/// Get available abilities for currently selected unit(s)
+/// Returns array of dictionaries with: id, name, energyCost, needsTarget (bool), targetType (0=none, 1=ground, 2=unit)
+- (nullable NSArray<NSDictionary*>*)getAvailableAbilities;
+
+/// Use ability without target (e.g., Stim Pack, Siege Mode, Burrow)
+- (void)useAbility:(int)abilityId;
+
+/// Use ability on ground target (e.g., Psionic Storm, Scanner Sweep)
+- (void)useAbilityOnGround:(int)abilityId atX:(CGFloat)x y:(CGFloat)y;
+
+/// Use ability on unit target (e.g., Yamato Cannon, Lockdown)
+- (void)useAbilityOnUnit:(int)abilityId targetUnitId:(int)targetId;
+
+/// Control Groups (0-9)
+/// Assign currently selected units to a control group
+- (void)assignControlGroup:(int)group;
+
+/// Add currently selected units to a control group (without replacing)
+- (void)addToControlGroup:(int)group;
+
+/// Select all units in a control group
+- (void)selectControlGroup:(int)group;
+
+/// Get the number of units in a control group
+- (int)getControlGroupSize:(int)group;
+
+/// Rally Points
+/// Set rally point for selected production building at world coordinates
+- (void)setRallyPointAtX:(CGFloat)x y:(CGFloat)y;
+
+/// Set rally point to follow a specific unit
+- (void)setRallyPointToUnit:(int)targetUnitId;
 
 /// Callbacks
 @property (nonatomic, copy, nullable) FrameUpdateCallback onFrameUpdate;

@@ -1,0 +1,1283 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		E21EC6F19AAAF4C3F8B789E1 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8624B070B2954590B059343A /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				499D6AA0E31A47F3563274A2 /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				42CD87CDFA354293BE4EA930 /* PBXTargetDependency */,
+				67B7CE27679C4C75907A6D91 /* PBXTargetDependency */,
+				07724DDDA96849668B4DAC72 /* PBXTargetDependency */,
+				671C3A798589492890066BCB /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		FAEC932B9D1978ACF41C8103 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = F822D0FD9A044A8B91390CCE /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				A4CFB561778F89A1AB520F0E /* Generate CMakeFiles/ZERO_CHECK */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		0A4E1078C2AD455B8AC1D572 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeFiles/openbw_core.dir/Info.plist */ = {isa = PBXBuildFile; fileRef = D0163CC6A9B0488D8A03DC59 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeFiles/openbw_core.dir/Info.plist */; };
+		1306BC295F4A4CDF88320744 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/ios_platform.mm */ = {isa = PBXBuildFile; fileRef = 73B791215BF7440F8EDBE4E2 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/ios_platform.mm */; settings = {COMPILER_FLAGS = "-x objective-c++ -fobjc-arc"; }; };
+		23A5D9CB32C14C11ABA1A3F3 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 81FCF700503941749D87FF61 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/CMakeLists.txt */; };
+		2E97C75F92A541129C2C2EEB /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWBridge/OpenBWBridge.mm */ = {isa = PBXBuildFile; fileRef = 0AB2D70E0E594728BFF0A8CE /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWBridge/OpenBWBridge.mm */; settings = {COMPILER_FLAGS = "-x objective-c++ -fobjc-arc"; }; };
+		5B49B0C314064AC3A4A8E4FA /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/openbw_instantiate.cpp */ = {isa = PBXBuildFile; fileRef = 3A48DA95107A4008A895CB76 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/openbw_instantiate.cpp */; };
+		5EC600AC80534304BE7D4602 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/OpenBWGameRunner.mm */ = {isa = PBXBuildFile; fileRef = D9ED4B8CDDD04FDBA2573CD3 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/OpenBWGameRunner.mm */; settings = {COMPILER_FLAGS = "-x objective-c++ -fobjc-arc"; }; };
+		6612B660C31D4B30AD59FF21 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/MetalRenderer.mm */ = {isa = PBXBuildFile; fileRef = ECB554B53B3643E1AA0AE530 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/MetalRenderer.mm */; };
+		763BBE2CBAD14FB7913DD4BE /* /Users/cypher/Documents/Development/coding/sc-ios/ios/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 1CB771CD991247C6872367A1 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/CMakeLists.txt */; };
+		832E178AEAEF4D61BB7B7C38 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/OpenBWRenderer.mm */ = {isa = PBXBuildFile; fileRef = 19752FAFA09E4D17A088124F /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/OpenBWRenderer.mm */; settings = {COMPILER_FLAGS = "-x objective-c++ -fobjc-arc"; }; };
+		9246B8169AA2482484279134 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeFiles/openbw_bridge.dir/Info.plist */ = {isa = PBXBuildFile; fileRef = 05FE801B451C410EB426C03D /* /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeFiles/openbw_bridge.dir/Info.plist */; };
+		C0E9D4A449244ED4A6B5DC9D /* /Users/cypher/Documents/Development/coding/sc-ios/ios/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = AD5FCF2069D142909CC704CA /* /Users/cypher/Documents/Development/coding/sc-ios/ios/CMakeLists.txt */; };
+		D5A9FD55557347D4A417D817 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeFiles/openbw_ios_platform.dir/Info.plist */ = {isa = PBXBuildFile; fileRef = 42999301CE7D437FA568923A /* /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeFiles/openbw_ios_platform.dir/Info.plist */; };
+		DBFC07198FB348CCBA5F6D67 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/MPQLoader.mm */ = {isa = PBXBuildFile; fileRef = B16378932BD047B4B1ECE7DA /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/MPQLoader.mm */; settings = {COMPILER_FLAGS = "-x objective-c++ -fobjc-arc"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		80C77C766FFF40138E4F8D41 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		AC86C47D2B304FC7B88A6A3B /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		AF68EBDD4B8444F4935B7692 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		B8E49A92627947708214DA94 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		0E15E80CAEE249CB9184F0C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C82CFC6F933400E96831BAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 54E4BF86C1948EE02E073400;
+			remoteInfo = openbw_ios_platform;
+		};
+		11E914D19D1D43D9883B8900 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C82CFC6F933400E96831BAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D39C075B97C789F93A912C94;
+			remoteInfo = openbw_bridge;
+		};
+		16B3FC1B18A644089E695CDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C82CFC6F933400E96831BAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAEC932B9D1978ACF41C8103;
+			remoteInfo = ZERO_CHECK;
+		};
+		4367D258028B4DC986D0DD9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C82CFC6F933400E96831BAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6F709AD2E44D0754F4DE528C;
+			remoteInfo = openbw_core;
+		};
+		760A75305B144067A158D549 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C82CFC6F933400E96831BAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6F709AD2E44D0754F4DE528C;
+			remoteInfo = openbw_core;
+		};
+		77609FA32296408E8946DBD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C82CFC6F933400E96831BAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 54E4BF86C1948EE02E073400;
+			remoteInfo = openbw_ios_platform;
+		};
+		9C19073C8E4F4A829613F8B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C82CFC6F933400E96831BAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6F709AD2E44D0754F4DE528C;
+			remoteInfo = openbw_core;
+		};
+		C44074A09BF24ED8A7E8898D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C82CFC6F933400E96831BAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAEC932B9D1978ACF41C8103;
+			remoteInfo = ZERO_CHECK;
+		};
+		CD5A8094E3E04B9FB81396E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C82CFC6F933400E96831BAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAEC932B9D1978ACF41C8103;
+			remoteInfo = ZERO_CHECK;
+		};
+		DC2699057D114D618856C5E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C82CFC6F933400E96831BAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAEC932B9D1978ACF41C8103;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05FE801B451C410EB426C03D /* /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeFiles/openbw_bridge.dir/Info.plist */ = {isa = PBXFileReference; explicitFileType = sourcecode.text.plist; fileEncoding = 4; name = Info.plist; path = "build-device/CMakeFiles/openbw_bridge.dir/Info.plist"; sourceTree = SOURCE_ROOT; };
+		0AB2D70E0E594728BFF0A8CE /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWBridge/OpenBWBridge.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = OpenBWBridge.mm; path = "OpenBW-iOS/Sources/OpenBWBridge/OpenBWBridge.mm"; sourceTree = SOURCE_ROOT; };
+		19752FAFA09E4D17A088124F /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/OpenBWRenderer.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = OpenBWRenderer.mm; path = "OpenBW-iOS/Sources/OpenBWCore/OpenBWRenderer.mm"; sourceTree = SOURCE_ROOT; };
+		1CB771CD991247C6872367A1 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		3A48DA95107A4008A895CB76 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/openbw_instantiate.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = openbw_instantiate.cpp; path = "OpenBW-iOS/Sources/OpenBWCore/openbw_instantiate.cpp"; sourceTree = SOURCE_ROOT; };
+		42999301CE7D437FA568923A /* /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeFiles/openbw_ios_platform.dir/Info.plist */ = {isa = PBXFileReference; explicitFileType = sourcecode.text.plist; fileEncoding = 4; name = Info.plist; path = "build-device/CMakeFiles/openbw_ios_platform.dir/Info.plist"; sourceTree = SOURCE_ROOT; };
+		4E202F9BCD2444D1BFC8F948 /* openbw_ios_platform */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libopenbw_ios_platform.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		73B791215BF7440F8EDBE4E2 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/ios_platform.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = ios_platform.mm; path = "OpenBW-iOS/Sources/OpenBWCore/ios_platform.mm"; sourceTree = SOURCE_ROOT; };
+		763F17AE08334C97AF4F9B6E /* /Users/cypher/Documents/Development/coding/sc-ios/ios/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		81FCF700503941749D87FF61 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		AD5FCF2069D142909CC704CA /* /Users/cypher/Documents/Development/coding/sc-ios/ios/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		B16378932BD047B4B1ECE7DA /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/MPQLoader.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = MPQLoader.mm; path = "OpenBW-iOS/Sources/OpenBWCore/MPQLoader.mm"; sourceTree = SOURCE_ROOT; };
+		D0163CC6A9B0488D8A03DC59 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeFiles/openbw_core.dir/Info.plist */ = {isa = PBXFileReference; explicitFileType = sourcecode.text.plist; fileEncoding = 4; name = Info.plist; path = "build-device/CMakeFiles/openbw_core.dir/Info.plist"; sourceTree = SOURCE_ROOT; };
+		D9ED4B8CDDD04FDBA2573CD3 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/OpenBWGameRunner.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = OpenBWGameRunner.mm; path = "OpenBW-iOS/Sources/OpenBWCore/OpenBWGameRunner.mm"; sourceTree = SOURCE_ROOT; };
+		ECB554B53B3643E1AA0AE530 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/MetalRenderer.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = MetalRenderer.mm; path = "OpenBW-iOS/Sources/OpenBWCore/MetalRenderer.mm"; sourceTree = SOURCE_ROOT; };
+		F424E2F117EA46D8BAE091F4 /* openbw_core */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libopenbw_core.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F454A88C03514C04A7B2450E /* openbw_bridge */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libopenbw_bridge.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0794BD6E43044E769502B453 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		352CE979A568483DADEE6B73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A93F9934E9242848A6A3288 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00C3A04B77954862B13DBB9B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		174EF9C412984CA8A29209C4 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A48DA95107A4008A895CB76 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/openbw_instantiate.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		2D7780B2A7604951BB2BA7DD = {
+			isa = PBXGroup;
+			children = (
+				6C55938AD97B4B20B9DC0DC8 /* ALL_BUILD */,
+				550DB25666EB45AFA96E11F4 /* openbw_bridge */,
+				4AD9F1C758AB4E8897A7B99C /* openbw_core */,
+				CF6F4C30B8CB4B7FAAB8E506 /* openbw_ios_platform */,
+				FF609D08A6FA4250A2B3B8AC /* Products */,
+				96D9B65721EE453D947EA4A9 /* Frameworks */,
+				00C3A04B77954862B13DBB9B /* Resources */,
+			);
+			sourceTree = "<group>";
+		};
+		4AD9F1C758AB4E8897A7B99C /* openbw_core */ = {
+			isa = PBXGroup;
+			children = (
+				4D294E319E1341CC8E8C9A78 /* Resources */,
+				174EF9C412984CA8A29209C4 /* Source Files */,
+				AD5FCF2069D142909CC704CA /* /Users/cypher/Documents/Development/coding/sc-ios/ios/CMakeLists.txt */,
+			);
+			name = openbw_core;
+			sourceTree = "<group>";
+		};
+		4D294E319E1341CC8E8C9A78 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D0163CC6A9B0488D8A03DC59 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeFiles/openbw_core.dir/Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		550DB25666EB45AFA96E11F4 /* openbw_bridge */ = {
+			isa = PBXGroup;
+			children = (
+				61FCC62AD9794EC38AF97AAE /* Resources */,
+				AE8F166897824E0FA1C67AE8 /* Source Files */,
+				81FCF700503941749D87FF61 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/CMakeLists.txt */,
+			);
+			name = openbw_bridge;
+			sourceTree = "<group>";
+		};
+		61FCC62AD9794EC38AF97AAE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				05FE801B451C410EB426C03D /* /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeFiles/openbw_bridge.dir/Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6C55938AD97B4B20B9DC0DC8 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				E84AC4B3EE264352BF680DC3 /* CMake Rules */,
+				763F17AE08334C97AF4F9B6E /* /Users/cypher/Documents/Development/coding/sc-ios/ios/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		822C8A27DEBB4C0B8715E933 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				B16378932BD047B4B1ECE7DA /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/MPQLoader.mm */,
+				ECB554B53B3643E1AA0AE530 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/MetalRenderer.mm */,
+				D9ED4B8CDDD04FDBA2573CD3 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/OpenBWGameRunner.mm */,
+				19752FAFA09E4D17A088124F /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/OpenBWRenderer.mm */,
+				73B791215BF7440F8EDBE4E2 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/ios_platform.mm */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		8BDB5119D91C4067B6083F3E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				42999301CE7D437FA568923A /* /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeFiles/openbw_ios_platform.dir/Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		96D9B65721EE453D947EA4A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE8F166897824E0FA1C67AE8 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				0AB2D70E0E594728BFF0A8CE /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWBridge/OpenBWBridge.mm */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		CF6F4C30B8CB4B7FAAB8E506 /* openbw_ios_platform */ = {
+			isa = PBXGroup;
+			children = (
+				8BDB5119D91C4067B6083F3E /* Resources */,
+				822C8A27DEBB4C0B8715E933 /* Source Files */,
+				1CB771CD991247C6872367A1 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/CMakeLists.txt */,
+			);
+			name = openbw_ios_platform;
+			sourceTree = "<group>";
+		};
+		E84AC4B3EE264352BF680DC3 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		FF609D08A6FA4250A2B3B8AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F454A88C03514C04A7B2450E /* openbw_bridge */,
+				F424E2F117EA46D8BAE091F4 /* openbw_core */,
+				4E202F9BCD2444D1BFC8F948 /* openbw_ios_platform */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		54E4BF86C1948EE02E073400 /* openbw_ios_platform */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DD1ABEFFC2143B7BB951789 /* Build configuration list for PBXNativeTarget "openbw_ios_platform" */;
+			buildPhases = (
+				48B3488E5D6C46F0B6BD7E17 /* Sources */,
+				352CE979A568483DADEE6B73 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2CC6E6B36A134097B355AB82 /* PBXTargetDependency */,
+				9816149B7A6D40AB8E1D37C4 /* PBXTargetDependency */,
+			);
+			name = openbw_ios_platform;
+			productName = openbw_ios_platform;
+			productReference = 4E202F9BCD2444D1BFC8F948 /* openbw_ios_platform */;
+			productType = "com.apple.product-type.library.static";
+		};
+		6F709AD2E44D0754F4DE528C /* openbw_core */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56620FAFFDB74419B4221C99 /* Build configuration list for PBXNativeTarget "openbw_core" */;
+			buildPhases = (
+				08611F66CE2941E599A4C5D7 /* Sources */,
+				8A93F9934E9242848A6A3288 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F148369E3890451286804D44 /* PBXTargetDependency */,
+			);
+			name = openbw_core;
+			productName = openbw_core;
+			productReference = F424E2F117EA46D8BAE091F4 /* openbw_core */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D39C075B97C789F93A912C94 /* openbw_bridge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53FBCB77DD5648389C63F4B9 /* Build configuration list for PBXNativeTarget "openbw_bridge" */;
+			buildPhases = (
+				86E92F2E1A1A4044B79EDB21 /* Sources */,
+				0794BD6E43044E769502B453 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F77E42F9FEF345FE9D1C6764 /* PBXTargetDependency */,
+				9D9DE34A5F084BB986C86CCA /* PBXTargetDependency */,
+				117131599CFE40D1B75874C2 /* PBXTargetDependency */,
+			);
+			name = openbw_bridge;
+			productName = openbw_bridge;
+			productReference = F454A88C03514C04A7B2450E /* openbw_bridge */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C82CFC6F933400E96831BAC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2620;
+			};
+			buildConfigurationList = 2ACD1ED2CFA34F7A846DBDDE /* Build configuration list for PBXProject "OpenBW-iOS" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				B8E49A92627947708214DA94 /* Debug */,
+				AC86C47D2B304FC7B88A6A3B /* Release */,
+				AF68EBDD4B8444F4935B7692 /* MinSizeRel */,
+				80C77C766FFF40138E4F8D41 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 2D7780B2A7604951BB2BA7DD;
+			projectDirPath = "/Users/cypher/Documents/Development/coding/sc-ios/ios";
+			projectRoot = "";
+			targets = (
+				E21EC6F19AAAF4C3F8B789E1 /* ALL_BUILD */,
+				D39C075B97C789F93A912C94 /* openbw_bridge */,
+				6F709AD2E44D0754F4DE528C /* openbw_core */,
+				54E4BF86C1948EE02E073400 /* openbw_ios_platform */,
+				FAEC932B9D1978ACF41C8103 /* ZERO_CHECK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3C0110FC8322DE7E50886E21 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		499D6AA0E31A47F3563274A2 /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+"/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeFiles/ALL_BUILD"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device
+  echo Build\\ all\\ projects
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		9B50530E35CC49C82C2FACCF = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		A4CFB561778F89A1AB520F0E /* Generate CMakeFiles/ZERO_CHECK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ZERO_CHECK";
+			outputPaths = (
+"/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeFiles/ZERO_CHECK"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device
+  make -f /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device
+  make -f /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device
+  make -f /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device
+  make -f /Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/CMakeScripts/ReRunCMake.make
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		08611F66CE2941E599A4C5D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B49B0C314064AC3A4A8E4FA /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/openbw_instantiate.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48B3488E5D6C46F0B6BD7E17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBFC07198FB348CCBA5F6D67 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/MPQLoader.mm */,
+				6612B660C31D4B30AD59FF21 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/MetalRenderer.mm */,
+				5EC600AC80534304BE7D4602 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/OpenBWGameRunner.mm */,
+				832E178AEAEF4D61BB7B7C38 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/OpenBWRenderer.mm */,
+				1306BC295F4A4CDF88320744 /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore/ios_platform.mm */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86E92F2E1A1A4044B79EDB21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E97C75F92A541129C2C2EEB /* /Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWBridge/OpenBWBridge.mm */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		07724DDDA96849668B4DAC72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D39C075B97C789F93A912C94 /* openbw_bridge */;
+			targetProxy = 11E914D19D1D43D9883B8900 /* PBXContainerItemProxy */;
+		};
+		117131599CFE40D1B75874C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAEC932B9D1978ACF41C8103 /* ZERO_CHECK */;
+			targetProxy = CD5A8094E3E04B9FB81396E9 /* PBXContainerItemProxy */;
+		};
+		2CC6E6B36A134097B355AB82 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6F709AD2E44D0754F4DE528C /* openbw_core */;
+			targetProxy = 9C19073C8E4F4A829613F8B4 /* PBXContainerItemProxy */;
+		};
+		42CD87CDFA354293BE4EA930 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6F709AD2E44D0754F4DE528C /* openbw_core */;
+			targetProxy = 760A75305B144067A158D549 /* PBXContainerItemProxy */;
+		};
+		671C3A798589492890066BCB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAEC932B9D1978ACF41C8103 /* ZERO_CHECK */;
+			targetProxy = DC2699057D114D618856C5E2 /* PBXContainerItemProxy */;
+		};
+		67B7CE27679C4C75907A6D91 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 54E4BF86C1948EE02E073400 /* openbw_ios_platform */;
+			targetProxy = 0E15E80CAEE249CB9184F0C4 /* PBXContainerItemProxy */;
+		};
+		9816149B7A6D40AB8E1D37C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAEC932B9D1978ACF41C8103 /* ZERO_CHECK */;
+			targetProxy = C44074A09BF24ED8A7E8898D /* PBXContainerItemProxy */;
+		};
+		9D9DE34A5F084BB986C86CCA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 54E4BF86C1948EE02E073400 /* openbw_ios_platform */;
+			targetProxy = 77609FA32296408E8946DBD9 /* PBXContainerItemProxy */;
+		};
+		F148369E3890451286804D44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAEC932B9D1978ACF41C8103 /* ZERO_CHECK */;
+			targetProxy = 16B3FC1B18A644089E695CDE /* PBXContainerItemProxy */;
+		};
+		F77E42F9FEF345FE9D1C6764 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6F709AD2E44D0754F4DE528C /* openbw_core */;
+			targetProxy = 4367D258028B4DC986D0DD9E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0059C5CEF63B4D169FC28989 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		0EC9B5AEC5824ED4845AC940 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/Debug${EFFECTIVE_PLATFORM_NAME}";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",ASIO_STANDALONE,ASIO_NO_DEPRECATED,"'OPENBW_HEADLESS=1'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw","/Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWBridge","/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw/ui","/Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore","/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw/deps/asio/asio/include","$(inherited)");
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "   '-std=gnu++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = openbw_bridge;
+				SECTORDER_FLAGS = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_TEMP_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/build/openbw_bridge.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		131B5F35478E4649BDDF4B1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/Debug${EFFECTIVE_PLATFORM_NAME}";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",ASIO_STANDALONE,ASIO_NO_DEPRECATED,"'OPENBW_HEADLESS=1'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw","/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw/deps/asio/asio/include","$(inherited)");
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -fembed-bitcode -fembed-bitcode    '-std=gnu++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = openbw_core;
+				SECTORDER_FLAGS = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_TEMP_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/build/openbw_core.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		1846AB81B95645FCA982E15E /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/build";
+			};
+			name = RelWithDebInfo;
+		};
+		18D6B30AB573416FBD20A6EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk;
+				SYMROOT = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/build";
+			};
+			name = Debug;
+		};
+		255B88C861AC4EF889ADBAE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		2AE078CD6AC1473CA164B73F /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/RelWithDebInfo${EFFECTIVE_PLATFORM_NAME}";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",ASIO_STANDALONE,ASIO_NO_DEPRECATED,"'OPENBW_HEADLESS=1'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw","/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw/ui","/Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore","/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw/deps/asio/asio/include","$(inherited)");
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG '-std=gnu++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = openbw_ios_platform;
+				SECTORDER_FLAGS = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_TEMP_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/build/openbw_ios_platform.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		2F8F287E41A743C299683F16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/build";
+			};
+			name = Release;
+		};
+		329C850A775B4B66A6600025 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		3D991F398A53462FAC68D238 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		46425DF7AD4E4C0C91787A0C /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/build";
+			};
+			name = MinSizeRel;
+		};
+		4D76732E4A114AF2B2839E06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/Debug${EFFECTIVE_PLATFORM_NAME}";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",ASIO_STANDALONE,ASIO_NO_DEPRECATED,"'OPENBW_HEADLESS=1'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw","/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw/ui","/Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore","/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw/deps/asio/asio/include","$(inherited)");
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "   '-std=gnu++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = openbw_ios_platform;
+				SECTORDER_FLAGS = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_TEMP_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/build/openbw_ios_platform.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		531439872B734C189C7F3662 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/MinSizeRel${EFFECTIVE_PLATFORM_NAME}";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",ASIO_STANDALONE,ASIO_NO_DEPRECATED,"'OPENBW_HEADLESS=1'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw","/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw/ui","/Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore","/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw/deps/asio/asio/include","$(inherited)");
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=gnu++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = openbw_ios_platform;
+				SECTORDER_FLAGS = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_TEMP_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/build/openbw_ios_platform.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		63D13D4EC72E410F91546E8C /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		6712D879B86D4B6088E08DE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/Release${EFFECTIVE_PLATFORM_NAME}";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",ASIO_STANDALONE,ASIO_NO_DEPRECATED,"'OPENBW_HEADLESS=1'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw","/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw/ui","/Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore","/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw/deps/asio/asio/include","$(inherited)");
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=gnu++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = openbw_ios_platform;
+				SECTORDER_FLAGS = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_TEMP_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/build/openbw_ios_platform.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		67A9BBE5F8AB4325BF771261 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		899DA8C392A249DC80E5EB8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/Release${EFFECTIVE_PLATFORM_NAME}";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",ASIO_STANDALONE,ASIO_NO_DEPRECATED,"'OPENBW_HEADLESS=1'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw","/Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWBridge","/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw/ui","/Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore","/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw/deps/asio/asio/include","$(inherited)");
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=gnu++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = openbw_bridge;
+				SECTORDER_FLAGS = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_TEMP_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/build/openbw_bridge.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		93685F36A5904ADCBC0049C2 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/RelWithDebInfo${EFFECTIVE_PLATFORM_NAME}";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",ASIO_STANDALONE,ASIO_NO_DEPRECATED,"'OPENBW_HEADLESS=1'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw","/Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWBridge","/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw/ui","/Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore","/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw/deps/asio/asio/include","$(inherited)");
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG '-std=gnu++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = openbw_bridge;
+				SECTORDER_FLAGS = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_TEMP_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/build/openbw_bridge.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		AA3D33A06F974A7FB9EF0867 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/RelWithDebInfo${EFFECTIVE_PLATFORM_NAME}";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",ASIO_STANDALONE,ASIO_NO_DEPRECATED,"'OPENBW_HEADLESS=1'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw","/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw/deps/asio/asio/include","$(inherited)");
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -fembed-bitcode -fembed-bitcode        -DNDEBUG '-std=gnu++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = openbw_core;
+				SECTORDER_FLAGS = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_TEMP_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/build/openbw_core.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		AF6C73B71D534E8E8985620A /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		B2C6B36E53B547EB86A40470 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/Release${EFFECTIVE_PLATFORM_NAME}";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",ASIO_STANDALONE,ASIO_NO_DEPRECATED,"'OPENBW_HEADLESS=1'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw","/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw/deps/asio/asio/include","$(inherited)");
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -fembed-bitcode -fembed-bitcode     -DNDEBUG '-std=gnu++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = openbw_core;
+				SECTORDER_FLAGS = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_TEMP_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/build/openbw_core.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		C82A37512FCE4900A8581F2A /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/MinSizeRel${EFFECTIVE_PLATFORM_NAME}";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",ASIO_STANDALONE,ASIO_NO_DEPRECATED,"'OPENBW_HEADLESS=1'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw","/Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWBridge","/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw/ui","/Users/cypher/Documents/Development/coding/sc-ios/ios/OpenBW-iOS/Sources/OpenBWCore","/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw/deps/asio/asio/include","$(inherited)");
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=gnu++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = openbw_bridge;
+				SECTORDER_FLAGS = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_TEMP_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/build/openbw_bridge.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		EEC6CC2A652849C5B5588086 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/MinSizeRel${EFFECTIVE_PLATFORM_NAME}";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",ASIO_STANDALONE,ASIO_NO_DEPRECATED,"'OPENBW_HEADLESS=1'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw","/Users/cypher/Documents/Development/coding/sc-ios/ios/../openbw/deps/asio/asio/include","$(inherited)");
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = " -fembed-bitcode -fembed-bitcode     -DNDEBUG '-std=gnu++14' ";
+				OTHER_LIBTOOLFLAGS = ("");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = openbw_core;
+				SECTORDER_FLAGS = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_TEMP_DIR = "/Users/cypher/Documents/Development/coding/sc-ios/ios/build-device/build/openbw_core.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		F0F6AD8584D34160AA38DF20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2ACD1ED2CFA34F7A846DBDDE /* Build configuration list for PBXProject "OpenBW-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18D6B30AB573416FBD20A6EB /* Debug */,
+				2F8F287E41A743C299683F16 /* Release */,
+				46425DF7AD4E4C0C91787A0C /* MinSizeRel */,
+				1846AB81B95645FCA982E15E /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		53FBCB77DD5648389C63F4B9 /* Build configuration list for PBXNativeTarget "openbw_bridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0EC9B5AEC5824ED4845AC940 /* Debug */,
+				899DA8C392A249DC80E5EB8A /* Release */,
+				C82A37512FCE4900A8581F2A /* MinSizeRel */,
+				93685F36A5904ADCBC0049C2 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		56620FAFFDB74419B4221C99 /* Build configuration list for PBXNativeTarget "openbw_core" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				131B5F35478E4649BDDF4B1D /* Debug */,
+				B2C6B36E53B547EB86A40470 /* Release */,
+				EEC6CC2A652849C5B5588086 /* MinSizeRel */,
+				AA3D33A06F974A7FB9EF0867 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7DD1ABEFFC2143B7BB951789 /* Build configuration list for PBXNativeTarget "openbw_ios_platform" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D76732E4A114AF2B2839E06 /* Debug */,
+				6712D879B86D4B6088E08DE0 /* Release */,
+				531439872B734C189C7F3662 /* MinSizeRel */,
+				2AE078CD6AC1473CA164B73F /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8624B070B2954590B059343A /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				329C850A775B4B66A6600025 /* Debug */,
+				255B88C861AC4EF889ADBAE5 /* Release */,
+				3D991F398A53462FAC68D238 /* MinSizeRel */,
+				AF6C73B71D534E8E8985620A /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F822D0FD9A044A8B91390CCE /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0F6AD8584D34160AA38DF20 /* Debug */,
+				0059C5CEF63B4D169FC28989 /* Release */,
+				67A9BBE5F8AB4325BF771261 /* MinSizeRel */,
+				63D13D4EC72E410F91546E8C /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C82CFC6F933400E96831BAC /* Project object */;
+}

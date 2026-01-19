@@ -83,22 +83,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// Stop the current game
 - (void)stop;
 
-#pragma mark - Input Handling
-
-/// Handle touch began at screen coordinates
-- (void)touchBeganAtX:(CGFloat)x y:(CGFloat)y;
-
-/// Handle touch moved to screen coordinates
-- (void)touchMovedToX:(CGFloat)x y:(CGFloat)y;
-
-/// Handle touch ended at screen coordinates
-- (void)touchEndedAtX:(CGFloat)x y:(CGFloat)y;
-
-/// Handle pinch gesture (for zoom)
-- (void)pinchWithScale:(CGFloat)scale;
-
-/// Handle pan gesture (for camera)
-- (void)panWithDeltaX:(CGFloat)dx deltaY:(CGFloat)dy;
+// Input Flow:
+// 1. TouchInputManager (gesture recognition in Swift)
+// 2. GameController (command routing in Swift)
+// 3. OpenBWGameRunner (game state modification in Objective-C++)
+// Input methods previously defined here have been removed - use the above flow instead.
 
 #pragma mark - Commands
 

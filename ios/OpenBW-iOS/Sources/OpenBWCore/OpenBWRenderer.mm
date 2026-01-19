@@ -304,6 +304,20 @@ struct sprite_image_data {
     return self;
 }
 
+- (void)resizeWithWidth:(int)width height:(int)height {
+    if (_width == width && _height == height) return;
+    
+    _width = width;
+    _height = height;
+    
+    // Resize framebuffer
+    _framebuffer.resize(width * height, 0);
+    // Clear buffer to avoid garbage
+    std::fill(_framebuffer.begin(), _framebuffer.end(), 0);
+    
+    NSLog(@"OpenBWRenderer: Resized framebuffer to %dx%d", width, height);
+}
+
 - (const uint8_t*)framebuffer {
     return _framebuffer.data();
 }
@@ -853,7 +867,8 @@ struct sprite_image_data {
 - (void)renderWithCameraX:(float)cameraX
                   cameraY:(float)cameraY
                  mapWidth:(int)mapWidth
-                mapHeight:(int)mapHeight {
+                mapHeight:(int)mapHeight
+                zoomLevel:(float)zoomLevel {
     if (!self.isReady) {
         [self renderTestPatternWithCameraX:cameraX cameraY:cameraY
                                   mapWidth:mapWidth mapHeight:mapHeight];
@@ -863,11 +878,16 @@ struct sprite_image_data {
     auto& tileset = _tilesets[_currentTileset];
     uint8_t* fb = _framebuffer.data();
 
-    // Calculate visible tile range
-    int startTileX = std::max(0, (int)(cameraX - _width / 2) / 32);
-    int startTileY = std::max(0, (int)(cameraY - _height / 2) / 32);
-    int endTileX = std::min(mapWidth / 32, (int)(cameraX + _width / 2) / 32 + 1);
-    int endTileY = std::min(mapHeight / 32, (int)(cameraY + _height / 2) / 32 + 1);
+    // Calculate visible tile range accounting for zoom
+    // When zoomed in (zoom > 1), we see less of the world
+    // When zoomed out (zoom < 1), we see more of the world
+    float worldViewportWidth = _width / zoomLevel;
+    float worldViewportHeight = _height / zoomLevel;
+
+    int startTileX = std::max(0, (int)(cameraX - worldViewportWidth / 2) / 32);
+    int startTileY = std::max(0, (int)(cameraY - worldViewportHeight / 2) / 32);
+    int endTileX = std::min(mapWidth / 32, (int)(cameraX + worldViewportWidth / 2) / 32 + 1);
+    int endTileY = std::min(mapHeight / 32, (int)(cameraY + worldViewportHeight / 2) / 32 + 1);
 
     int mapTileWidth = _hasMapTiles ? _mapTileWidth : (mapWidth / 32);
 

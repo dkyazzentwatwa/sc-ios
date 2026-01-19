@@ -292,11 +292,12 @@ void MetalRenderer_SetCamera(float x, float y, float zoom) {
         MetalUniforms* uniforms = (MetalUniforms*)[g_uniformBuffer contents];
 
         // Create view matrix with camera offset and zoom
+        // Scale is applied independently of translation to avoid double-zoom effect
         matrix_float4x4 view = matrix_identity_float4x4;
-        view.columns[0][0] = zoom;
-        view.columns[1][1] = zoom;
-        view.columns[3][0] = -x * zoom;
-        view.columns[3][1] = -y * zoom;
+        view.columns[0][0] = zoom;        // Scale X
+        view.columns[1][1] = zoom;        // Scale Y
+        view.columns[3][0] = -x;          // Translate X (no zoom multiplier)
+        view.columns[3][1] = -y;          // Translate Y (no zoom multiplier)
 
         uniforms->viewMatrix = view;
     }

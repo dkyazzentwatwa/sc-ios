@@ -371,30 +371,8 @@ static OpenBWEngine* _sharedInstance = nil;
 
 #pragma mark - Input Handling
 
-- (void)touchBeganAtX:(CGFloat)x y:(CGFloat)y {
-    // Touch input handled directly - converted to game commands
-    // TODO: Convert screen coordinates to game world coordinates
-}
-
-- (void)touchMovedToX:(CGFloat)x y:(CGFloat)y {
-    // Touch moved - update selection box or camera drag
-    // TODO: Implement touch tracking
-}
-
-- (void)touchEndedAtX:(CGFloat)x y:(CGFloat)y {
-    // Touch ended - finalize selection or command
-    // TODO: Issue game commands based on touch gesture
-}
-
-- (void)pinchWithScale:(CGFloat)scale {
-    _zoomLevel *= scale;
-    _zoomLevel = fmax(0.5f, fmin(2.0f, _zoomLevel));  // Clamp zoom
-}
-
-- (void)panWithDeltaX:(CGFloat)dx deltaY:(CGFloat)dy {
-    _cameraX += dx / _zoomLevel;
-    _cameraY += dy / _zoomLevel;
-}
+// Unused input methods removed. Input is handled through:
+// TouchInputManager → GameController → OpenBWGameRunner
 
 #pragma mark - Commands
 
